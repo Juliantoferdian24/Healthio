@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="70dp"
+    android:scrollbars="none"
+    tools:context=".ui.main.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/whiteBg">
+
+        <TextView
+            android:id="@+id/hello_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato_family"
+            android:text="Hello"
+            android:textAlignment="textStart"
+            android:textColor="@color/blackAccent"
+            android:textFontWeight="700"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/lato_family"
+            android:text="Bryan."
+            android:textAlignment="textStart"
+            android:textColor="@color/blackAccent"
+            android:textFontWeight="700"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/hello_home"
+            app:layout_constraintTop_toTopOf="@+id/hello_home" />
+
+        <TextView
+            android:id="@+id/header_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato_family"
+            android:text="What do you need?"
+            android:textAlignment="textStart"
+            android:textColor="@color/blackAccent"
+            android:textFontWeight="700"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hello_home" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_filled_white"
+            android:drawableStart="@drawable/ic_search"
+            android:elevation="5dp"
+            android:fontFamily="@font/lato_family"
+            android:hint="Search Something"
+            android:paddingVertical="16dp"
+            android:paddingLeft="16dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/blackAccent"
+            android:textColorHint="@color/hint"
+            android:textFontWeight="400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_home">
+
+        </EditText>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_category" />
+
+
+        <TextView
+            android:id="@+id/recommendation_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato_family"
+            android:text="Hospital Recommendation"
+            android:textAlignment="textStart"
+            android:textColor="@color/blackAccent"
+            android:textFontWeight="700"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_category" />
+
+        <TextView
+            android:id="@+id/recommendation_home_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/lato_family"
+            android:gravity="center_vertical"
+            android:text="Hospital recommendation based on your location"
+            android:textColor="@color/hint"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recommendation_home" />
+
+        <TextView
+            android:id="@+id/see_all_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/lato_family"
+            android:gravity="center"
+            android:text="See All"
+            android:textColor="@color/blueaccent"
+            android:textFontWeight="700"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recommendation_home" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recommendation_home_description"
+            tools:listitem="@layout/row_hospital" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
